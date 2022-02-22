@@ -25,5 +25,5 @@ class Solution:
 candidates = [2,3,6,7]
 target = 7
 lc39 = Solution()
-result = Solution.combinationSum(lc39,candidates,target)
+result = lc39.combinationSum(candidates,target)
 print(f'result: {result}')
