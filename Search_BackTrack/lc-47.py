@@ -17,7 +17,7 @@ class Solution:
             if (len(cur) == N):
                 res.append(cur.copy())
                 return
-            elif (all(v == 0 for v in hashmap.values())):
+            elif (all(v == 0 for v in hashmap.values())): # 这个条件必须在len(cur) == N 之后，否则直接return了
                 return
             for i in hashmap.keys():
                 if (hashmap[i] > 0):
