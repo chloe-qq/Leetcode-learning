@@ -17,3 +17,4 @@ class Solution:
             right = farthest
             step += 1
         return step
+    

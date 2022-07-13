@@ -33,8 +33,7 @@ class Solution:
             return True
                 
         a = dfs(n-1,n-1)
-        print(a)
-        print(len(visiting))
+
         if (len(visiting) == n and a==True):
             return True
         
