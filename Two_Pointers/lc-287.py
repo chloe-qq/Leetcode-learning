@@ -4,10 +4,31 @@
 # flip number
 # Floyd's Cycle Algorithm (快慢指针问题)
 
-
+"""
+Input: nums = [1,3,4,2,2]
+Output: 2
+Given an array of integers nums containing n + 1 integers where each integer is in the range [1, n] inclusive.
+"""
 from typing import List
 
-class Solution:
+
+# flip number method
+class Solution_1:
+    def findDuplicate(self, nums: List[int]) -> int:
+        for i in nums:
+            #print(nums)
+            if (i > 0):
+                if (nums[i] > 0):
+                    nums[i] *= -1
+                else:
+                    return i
+            else:
+                if (nums[-i] > 0):
+                    nums[-i]*=-1
+                else:
+                    return -i
+        return 0
+class Solution_2:
     def findDuplicate(self, nums: List[int]) -> int:
         fast = slow = nums[0]
         while True:
@@ -24,6 +45,8 @@ class Solution:
             slow = nums[slow]
             slow2 = nums[slow2]
         return slow2
-lc_287 = Solution()
-nums = [2,3,4,4,1,5]
+    
+
+lc_287 = Solution_1()
+nums = [1,3,4,2,2]
 print(f'Leetcode 287: {lc_287.findDuplicate(nums)}')
