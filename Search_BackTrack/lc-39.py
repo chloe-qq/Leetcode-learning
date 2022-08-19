@@ -1,5 +1,7 @@
 from typing import List
-
+# 排列组合问题 
+# 排列 dfs要进for loop
+# 组合 dfs 不进for loop
 class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
         N = len(candidates)
