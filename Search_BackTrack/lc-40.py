@@ -5,9 +5,11 @@ class Solution():
         N = len(candidates)
         result = []
         def dfs(i, cur, total):
+            # 必须先写这个，不然加了最后一个数达到target的就不会被加入result
             if (total == target):
                 result.append(cur.copy())
                 return
+            #后写这个
             if (i >= N or total > target):
                 return
             cur.append(candidates[i])
