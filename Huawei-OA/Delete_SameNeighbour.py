@@ -5,25 +5,25 @@
 
 输入: snggnngp 返回: sgp 消除: gg 、nnn
 
+lc-1047
+
 """
 
 def deleteNeightbourSame(text):
     stack = []
     char = ''
-    isSame = False
-    for c in text:        
-        if (isSame):
-            if (c == char):
-                continue
-            else:
-                isSame = False
-                char = ''
-        # not isSame   
-        if ((not stack) or c!=stack[-1]):
-            stack.append(c)
-        elif (stack and c==stack[-1]):
-            char = stack.pop()
-            isSame = True
+
+    for i in s:
+        if (not stack):
+            stack.append(i)
+            continue
+        if (stack and stack[-1] == i):
+            stack.pop()
+            if (len(stack) > 1 and stack[-1] == stack[-2]):
+                stack.pop()
+                stack.pop()
+        else:
+            stack.append(i)
     return ''.join(stack)
 
 text = 'snggnngp'
