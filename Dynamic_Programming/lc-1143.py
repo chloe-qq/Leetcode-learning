@@ -12,6 +12,11 @@ bottom-up dp: find the sub-problem
 if abcde, ace  -> bcde, ce
 if the currnent text[i]==text[j], we move diagonally from the dp
 or we go right, also go down and take the max of (going right, going down)
+
+the below cell represents the subproblem 
+比如 text1 长度为4, text2 长度为6，构建dp[4+1][6+1]
+dp[3][5]表示text1[3:] 和text2[5:]中的common subsequence个数
+所以最终返回dp[0][0]
 """
 class Solution:
     def longestCommonSubsequence(self, text1: str, text2: str) -> int:
