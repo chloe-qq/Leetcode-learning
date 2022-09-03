@@ -15,7 +15,6 @@ import heapq
 class Solution:
     def carPooling1(self, trips: List[List[int]], capacity: int) -> bool:
         trips = sorted(trips, key = lambda x: (x[1], x[2]))
-        print(trips)
         road = []
         heapq.heappush(road,[trips[0][2], trips[0][0]])
         capacity -= trips[0][0]
@@ -32,12 +31,12 @@ class Solution:
             if (capacity < 0):
                 return False
             heapq.heappush(road,[i[2],i[0]])
-            heapq.heapify(road)
-            print(road) 
+
         return True
     
     def carPooling(self, trips: List[List[int]], capacity: int) -> bool:
         lst = []
+        # concept of bucket sort
         for n, start, end in trips:
             lst.append((start, n))
             lst.append((end, -n))
