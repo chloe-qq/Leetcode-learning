@@ -1,5 +1,5 @@
 class Solution:
-    # 非常类似lc1249 two pass solution
+    # 非常类似lc1249 two pass solution, lc-678的思路
     def canBeValid(self, s: str, locked: str) -> bool:
         N = len(s)
         if ( N%2 == 1):
@@ -17,7 +17,7 @@ class Solution:
                     min_balance -= 1
                     max_balance -= 1
                     if (max_balance < 0):
-                        return False
+                        return False    
                 min_balance = max(0,min_balance)
             else:
                 # locked[i] == '0'
